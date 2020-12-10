@@ -28,7 +28,6 @@ class Encoder(nn.Module):
         x = self.relu(x)
         x = self.flatten(x)
         x = self.dense(x)
-        # x = self.relu(x)
         return x
 
 
