@@ -4,7 +4,8 @@ import torch.nn.functional as F
 
 
 class Encoder(nn.Module):
-    def _conv_layer_factory(self, input_channels, output_channels, **kwargs):
+    @staticmethod
+    def _conv_layer_factory(input_channels, output_channels, **kwargs):
         return nn.Sequential(
             nn.Conv2d(input_channels, output_channels, **kwargs),
             nn.BatchNorm2d(output_channels),
